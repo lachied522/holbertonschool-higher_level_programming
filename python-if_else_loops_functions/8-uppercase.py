@@ -1,10 +1,8 @@
 #!/usr/bin/python3
 def uppercase(string):
-    upper_string = ""
-    for c in string:
+    for i, c in enumerate(string):
+        end = '' if i < len(string) - 1 else '\n'
         if ord('a') <= ord(c) and ord(c) <= ord('z'):
-            upper_string += chr(ord(c) - ord('a') + ord('A'))
+            print("{:c}".format(ord(c) - ord('a') + ord('A')), end=end)
         else:
-            upper_string += c
-
-    print(upper_string)
+            print(c, end=end)
