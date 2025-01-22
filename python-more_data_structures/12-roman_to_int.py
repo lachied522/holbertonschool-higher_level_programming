@@ -10,8 +10,9 @@ char_map = {
     "M": 1000
 }
 
+
 def roman_to_int(roman_string):
-    if type(roman_string) != str:
+    if not isinstance(roman_string, str):
         return 0
 
     reversed_string = roman_string[::-1]
