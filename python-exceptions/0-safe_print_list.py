@@ -12,4 +12,5 @@ def safe_print_list(my_list=[], x=0):
 
         return num_printed
     except Exception:
+        print("")
         return num_printed
