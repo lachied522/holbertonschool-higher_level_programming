@@ -17,13 +17,15 @@ Tests:
     >>> add(3.4, 1.2)
     4
 
-    >>> add(2)
-    100
+    Missing argument b
+    	>>> add(2)
+   	100
 
-    >>> add()
-    Traceback (most recent call last):
-    ...
-    TypeError: add_integer() missing 1 required positional argument: 'a'
+    Missing both arguments
+	>>> add()
+	Traceback (most recent call last):
+   	 ...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
 
     Float Nan:
         >>> add(float('NaN'), 2)
@@ -36,3 +38,16 @@ Tests:
         Traceback (most recent call last):
         ...
         OverflowError: cannot convert float infinity to integer
+
+
+    Integer a and string:
+        >>> add(4, "school")
+        Traceback (most recent call last):
+        ...
+        TypeError: b must be an integer
+
+    Integer b and string:
+        >>> add("school", 4)
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
