@@ -25,3 +25,14 @@ Tests:
     ...
     TypeError: add_integer() missing 1 required positional argument: 'a'
 
+    Float Nan:
+        >>> add(float('NaN'), 2)
+        Traceback (most recent call last):
+        ...
+        ValueError: cannot convert float NaN to integer
+
+    Float overflow:
+        >>> add(1e400, 2)
+        Traceback (most recent call last):
+        ...
+        OverflowError: cannot convert float infinity to integer
