@@ -2,6 +2,8 @@
 """
 This is a dosctring to describe what this module does.
 """
+
+
 def add_integer(a, b=98):
     """
     Adds two numbers, float or integer.
@@ -12,6 +14,6 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
 
     if not (isinstance(b, float) or isinstance(b, int)):
-        raise TypeError("a must be an integer")
+        raise TypeError("b must be an integer")
 
     return (int(a) + int(b))

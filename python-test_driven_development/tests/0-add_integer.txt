@@ -16,3 +16,10 @@ Tests:
 
     >>> add(3.4, 1.2)
     4
+
+    >>> add(2)
+    100
+
+    >>> add()
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
