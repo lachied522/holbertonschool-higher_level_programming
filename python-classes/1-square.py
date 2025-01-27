@@ -18,4 +18,4 @@ class Square:
             position (tuple): coordinates of square in x y plane
                               must be positive
         """
-        self.size = size
+        self.__size = size
