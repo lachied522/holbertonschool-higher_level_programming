@@ -22,7 +22,6 @@ class Rectangle:
         if self.height == 0 or self.width == 0:
             return ""
 
-
         rect_string = ""
         for i in range(self.height):
             for j in range(self.width):
