@@ -16,11 +16,13 @@ class BaseGeometry:
         """
         Helper function for checking if value is an integer
         """
-        if not isinstance(value, int):
+        if not type(value).__name__ == int.__name__:
             raise TypeError(f"{name} must be an integer")
 
         if not value > 0:
             raise ValueError(f"{name} must be greater than 0")
+
+        return value
 
     def area(self):
         raise Exception("area() is not implemented")
