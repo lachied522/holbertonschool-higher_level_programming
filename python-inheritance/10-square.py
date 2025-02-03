@@ -2,13 +2,15 @@
 """
 This is a module docstring
 """
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+Rectangle = __import__('9-rectangle').Rectangle
 
 
-class Square(BaseGeometry):
+class Square(Rectangle):
     """
     Class that inherits from BaseGeometry
     """
 
     def __init__(self, size):
-        self.__size = self.integer_validator("size", size)
+        self.integer_validator("size", size)
+        super().__init__(size, size)
+
