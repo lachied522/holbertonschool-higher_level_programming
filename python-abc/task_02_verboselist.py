@@ -9,7 +9,7 @@ class VerboseList(list):
     This is a class docstring
     """
 
-    def __init__(self, items):
+    def __init__(self, items=[]):
         super().__init__(items)
 
     def append(self, item):
