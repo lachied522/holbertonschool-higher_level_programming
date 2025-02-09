@@ -21,4 +21,4 @@ class Dragon(SwimMixin, FlyMixin):
     """"""
 
     def roar(self):
-        print("The creature roars!")
+        print("The dragon roars!")
