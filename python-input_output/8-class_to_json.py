@@ -2,8 +2,10 @@
 """
 This is a module docstring
 """
-import json
 
 
 def class_to_json(obj):
-    return json.dumps(obj.__dict__)
+    """
+    This is a function docstring
+    """
+    return obj.__dict__
