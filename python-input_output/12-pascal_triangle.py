@@ -5,6 +5,9 @@ This is module docstring
 
 
 def pascal_triangle(n):
+    """
+    This is a function docstring
+    """
     if n <= 0:
         return []
 
