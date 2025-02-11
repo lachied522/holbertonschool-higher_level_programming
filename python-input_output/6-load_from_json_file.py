@@ -10,6 +10,4 @@ def load_from_json_file(filename):
     This is a function docstring
     """
     with open(filename, "r") as f:
-        s = f.read()
-
-    return json.loads(s)
+        return json.load(f)

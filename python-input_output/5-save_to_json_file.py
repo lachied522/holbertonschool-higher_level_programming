@@ -1,7 +1,7 @@
+#!/usr/bin/python3
 """
 This is a module docstring
 """
-#!/usr/bin/python3
 import json
 
 
