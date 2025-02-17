@@ -26,7 +26,10 @@ def fetch_and_save_posts():
 
     posts = res['posts']
 
+    for post in posts:
+        del post['userId']
+
     with open("posts.csv", "w") as f:
-        writer = csv.DictWriter(f, fieldnames=posts[0].keys())
+        writer = csv.DictWriter(f, fieldnames=["id", "title", "body"])
         writer.writeheader()
         writer.writerows(res['posts'])
