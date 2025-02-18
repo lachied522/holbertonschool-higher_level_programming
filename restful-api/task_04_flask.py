@@ -2,10 +2,10 @@
 """
 This is a module docstring
 """
-from flask import Flask, Response, request, jsonify
+from flask import Flask, request, jsonify
 
 
-USERS = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}
+USERS = {}
 
 app = Flask(__name__)
 
