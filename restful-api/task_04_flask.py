@@ -30,9 +30,12 @@ def get_username(username: str):
     data = USERS.get(username, None)
 
     if data is None:
-        return jsonify({
-            "error": "User not found"
-        })
+        return jsonify(
+            data={
+                "error": "User not found"
+            },
+            status=400
+        )
 
     return jsonify(data)
 
@@ -50,10 +53,13 @@ def add_user():
 
         USERS[data["username"]] = data
 
-    return jsonify({
-        "message": "User added",
-        "user": data,
-    })
+    return jsonify(
+        data = {
+            "message": "User added",
+            "user": data,
+        },
+        status=201
+    )
 
 
 if __name__ == "__main__":
