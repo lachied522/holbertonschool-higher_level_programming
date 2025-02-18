@@ -1,0 +1,60 @@
+#!/usr/bin/python3
+"""
+This is a module docstring
+"""
+from flask import Flask, Response, request, jsonify
+
+
+USERS = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}
+
+app = Flask(__name__)
+
+
+@app.get("/")
+def home():
+    return "Welcome to the Flask API!"
+
+
+@app.get("/status")
+def status():
+    return "OK"
+
+
+@app.get("/data")
+def data():
+    return jsonify(list(USERS.keys()))
+
+
+@app.get("/users/<username>")
+def get_username(username: str):
+    data = USERS.get(username, None)
+
+    if data is None:
+        return jsonify({
+            "error": "User not found"
+        })
+
+    return jsonify(data)
+
+
+@app.post("/add_user")
+def add_user():
+    data = request.json
+
+    if isinstance(data, dict):
+        if "username" not in data:
+            return jsonify(
+                data={"error": "Username is required"},
+                status=400
+            )
+
+        USERS[data["username"]] = data
+
+    return jsonify({
+        "message": "User added",
+        "user": data,
+    })
+
+
+if __name__ == "__main__":
+    app.run()
