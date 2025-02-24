@@ -30,7 +30,7 @@ def get_username(username: str):
     data = USERS.get(username, None)
 
     if data is None:
-        return jsonify({ "error": "User not found" }), 400
+        return { "error": "User not found" }, 400
 
     return jsonify(data)
 
