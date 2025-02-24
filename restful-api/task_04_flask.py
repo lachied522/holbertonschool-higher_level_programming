@@ -30,36 +30,26 @@ def get_username(username: str):
     data = USERS.get(username, None)
 
     if data is None:
-        return jsonify(
-            data={
-                "error": "User not found"
-            },
-            status=400
-        )
+        return jsonify({ "error": "User not found" }), 400
 
     return jsonify(data)
 
 
 @app.post("/add_user")
 def add_user():
-    data = request.json
+    data = request.get_json()
 
-    if isinstance(data, dict):
-        if "username" not in data:
-            return jsonify(
-                data={"error": "Username is required"},
-                status=400
-            )
+    if "username" not in data:
+        return jsonify({"error": "Username is required"}), 400
 
-        USERS[data["username"]] = data
+    USERS[data["username"]] = data
+    
+    res = {
+        "message": "User added",
+        "user": data,
+    }
 
-    return jsonify(
-        data = {
-            "message": "User added",
-            "user": data,
-        },
-        status=201
-    )
+    return jsonify(res), 201
 
 
 if __name__ == "__main__":
