@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Lists all states and order by id"""
 import MySQLdb
 import sys
