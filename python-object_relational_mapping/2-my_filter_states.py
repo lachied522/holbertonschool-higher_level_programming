@@ -19,7 +19,7 @@ if __name__ == "__main__":
     pointer = db.cursor()
 
     # execute a query
-    pointer.execute("SELECT * FROM states WHERE name = %s\
+    pointer.execute("SELECT * FROM states WHERE binary name = %s\
                     ORDER BY id ASC", (name, ))
 
     # fetch the result using fetchall to pass the checker
