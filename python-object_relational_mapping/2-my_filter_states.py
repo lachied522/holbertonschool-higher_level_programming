@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     # execute a query
     pointer.execute("SELECT * FROM states WHERE name = %s\
-                    ORDER BY id ASC", (name))
+                    ORDER BY id ASC", (name, ))
 
     # fetch the result using fetchall to pass the checker
     rows = pointer.fetchall()
