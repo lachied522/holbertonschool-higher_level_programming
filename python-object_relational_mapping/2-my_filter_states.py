@@ -4,8 +4,6 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    n = len(sys.argv)
-
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
@@ -21,7 +19,7 @@ if __name__ == "__main__":
     pointer = db.cursor()
 
     # execute a query
-    pointer.execute("SELECT * FROM states WHERE binary name = %s\
+    pointer.execute("SELECT * FROM states WHERE name = %s\
                     ORDER BY id ASC", (name))
 
     # fetch the result using fetchall to pass the checker
